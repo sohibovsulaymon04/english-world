@@ -9,15 +9,15 @@
 <div class="settings"><label id="uiLabel">Забони меню: <select id="uiLang" class="field" onchange="changeSettings()"><option value="tg">Тоҷикӣ</option><option value="ru">Русский</option><option value="en">English</option></select></label><label id="courseLabel">Забони омӯзиш: <select id="courseLang" class="field" onchange="changeSettings()"><option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="ru">🇷🇺 Русский</option><option value="fr">🇫🇷 Français</option><option value="es">🇪🇸 Español</option><option value="tr">🇹🇷 Türkçe</option></select></label></div>
 <section class="hero"><h1 id="heroTitle">Зуд омӯз!</h1><p id="heroDesc">Забони дилхоҳатро интихоб кун ва ҳар рӯз пеш рав!</p><div class="progress"><div id="mainProgress"></div></div><small id="progressText">0 / 100 XP то сатҳи нав</small></section>
 <div id="home" class="grid">
-<article class="card"><div class="big">📚</div><h2 id="vocabTitle">Луғат</h2><p id="vocabDesc">Калимаҳо, тарҷума ва талаффуз.</p><button class="btn wide" id="vocabBtn" onclick="startVocab()">Оғоз</button></article>
-<article class="card"><div class="big">🧠</div><h2 id="quizTitle">Тести луғат</h2><p id="quizDesc">Дониши калимаҳоро санҷ.</p><button class="btn wide" id="quizBtn" onclick="startQuiz('vocab')">Оғози тест</button></article>
-<article class="card"><div class="big">📖</div><h2 id="grammarTitle">Грамматика</h2><p id="grammarDesc">Қоидаҳо бо мисолҳои осон.</p><button class="btn wide" id="grammarBtn" onclick="startGrammar()">Омӯзиш</button></article>
-<article class="card"><div class="big">✍️</div><h2 id="grammarQuizTitle">Тести грамматика</h2><p id="grammarQuizDesc">Ҷумлаи дурустро интихоб кун.</p><button class="btn wide" id="grammarQuizBtn" onclick="startQuiz('grammar')">Оғози тест</button></article>
-<article class="card"><div class="big">🎧</div><h2 id="listenTitle">Гӯш кардан</h2><p id="listenDesc">Калимаҳоро бишнав ва такрор кун.</p><button class="btn wide" id="listenBtn" onclick="startListening()">Оғози машқ</button></article>
-<article class="card"><div class="big">🏆</div><h2 id="leagueTitle">Лига</h2><p id="leagueDesc">Рейтинги ҳамин браузер.</p><button class="btn wide" id="leagueBtn" onclick="showLeague()">Дидани лига</button></article>
+<article class="card"><div class="big">📚</div><h2 id="vocabTitle">Луғат</h2><p id="vocabDesc">Калимаҳо, тарҷума ва талаффуз.</p><button class="btn wide" id="vocabBtn" data-action="vocab">Оғоз</button></article>
+<article class="card"><div class="big">🧠</div><h2 id="quizTitle">Тести луғат</h2><p id="quizDesc">Дониши калимаҳоро санҷ.</p><button class="btn wide" id="quizBtn" data-action="vocab-quiz">Оғози тест</button></article>
+<article class="card"><div class="big">📖</div><h2 id="grammarTitle">Грамматика</h2><p id="grammarDesc">Қоидаҳо бо мисолҳои осон.</p><button class="btn wide" id="grammarBtn" data-action="grammar">Омӯзиш</button></article>
+<article class="card"><div class="big">✍️</div><h2 id="grammarQuizTitle">Тести грамматика</h2><p id="grammarQuizDesc">Ҷумлаи дурустро интихоб кун.</p><button class="btn wide" id="grammarQuizBtn" data-action="grammar-quiz">Оғози тест</button></article>
+<article class="card"><div class="big">🎧</div><h2 id="listenTitle">Гӯш кардан</h2><p id="listenDesc">Калимаҳоро бишнав ва такрор кун.</p><button class="btn wide" id="listenBtn" data-action="listen">Оғози машқ</button></article>
+<article class="card"><div class="big">🏆</div><h2 id="leagueTitle">Лига</h2><p id="leagueDesc">Рейтинги ҳамин браузер.</p><button class="btn wide" id="leagueBtn" data-action="league">Дидани лига</button></article>
 </div>
-<section id="play" class="card section hidden"><div class="level"><div><span class="muted" id="mode">Луғат</span><h2 id="counter">Машқ</h2></div><button class="btn secondary" id="exitBtn" onclick="goHome()">✕ Баромадан</button></div><div id="playContent"></div><div class="feedback" id="feedback"></div><button id="nextBtn" class="btn hidden" onclick="nextItem()">Давом додан →</button></section>
-<section id="league" class="card section hidden"><div class="level"><div><h2 id="leagueHeading">🏆 Лига</h2><p class="muted" id="leagueNote">Рейтинг ҳоло танҳо дар ҳамин браузер аст.</p></div><button class="btn secondary" id="backBtn" onclick="goHome()">Бозгашт</button></div><div id="ranking"></div></section>
+<section id="play" class="card section hidden"><div class="level"><div><span class="muted" id="mode">Луғат</span><h2 id="counter">Машқ</h2></div><button class="btn secondary" id="exitBtn" data-action="home">✕ Баромадан</button></div><div id="playContent"></div><div class="feedback" id="feedback"></div><button id="nextBtn" class="btn hidden" data-action="next">Давом додан →</button></section>
+<section id="league" class="card section hidden"><div class="level"><div><h2 id="leagueHeading">🏆 Лига</h2><p class="muted" id="leagueNote">Рейтинг ҳоло танҳо дар ҳамин браузер аст.</p></div><button class="btn secondary" id="backBtn" data-action="home">Бозгашт</button></div><div id="ranking"></div></section>
 <div class="foot">⚡ Зуд омӯз · Learn Fast</div></div>
 <script>
 const uiText={
@@ -79,16 +79,43 @@ function loseHeart(){recalcHearts();if(data.lives<=0)return false;let last=data.
 function hideAll(){['home','play','league'].forEach(x=>$(x).classList.add('hidden'))}function goHome(){hideAll();$('home').classList.remove('hidden')}
 function openPlay(label){hideAll();$('play').classList.remove('hidden');$('mode').textContent=label;$('feedback').textContent='';$('nextBtn').classList.add('hidden')}
 function startVocab(){mode='vocab';index=0;openPlay('📚 '+T().vocab);showVocab()}
-function showVocab(){let list=words(),w=list[index];$('counter').textContent=T().word+' '+(index+1)+' / '+list.length;$('playContent').innerHTML=`<div class="word">${w.word}</div><p style="font-size:23px">${w.meaning}</p><button class="btn secondary" onclick="speakCurrent()">🔊 ${T().hear}</button>`;$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=index===list.length-1?T().finish:T().nextWord;let key=data.courseLang+':'+w.word;if(!data.learned.includes(key)){data.learned.push(key);data.xp+=2;save()}}
+function showVocab(){let list=words(),w=list[index];$('counter').textContent=T().word+' '+(index+1)+' / '+list.length;$('playContent').innerHTML=`<div class="word">${w.word}</div><p style="font-size:23px">${w.meaning}</p><button class="btn secondary" data-action="speak">🔊 ${T().hear}</button>`;$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=index===list.length-1?T().finish:T().nextWord;let key=data.courseLang+':'+w.word;if(!data.learned.includes(key)){data.learned.push(key);data.xp+=2;save()}}
 function startGrammar(){mode='grammarLesson';grammarIndex=0;openPlay('📖 '+T().grammar);showGrammar()}
 function showGrammar(){let list=grammarData[data.courseLang]||grammarData.en,g=list[grammarIndex];$('counter').textContent=T().rule+' '+(grammarIndex+1)+' / '+list.length;$('playContent').innerHTML=`<h2>${g[0]}</h2><p>${g[1]}</p>${g[2].map(x=>`<div class="lesson">${x}</div>`).join('')}`;$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=grammarIndex===list.length-1?T().finish:T().nextRule}
 function startListening(){mode='listen';index=0;openPlay('🎧 '+T().listen);showListening()}
-function showListening(){let w=words()[index];$('counter').textContent=T().practice+' '+(index+1)+' / '+words().length;$('playContent').innerHTML=`<p>${T().listenHint}</p><button class="btn secondary" onclick="speakCurrent()">🔊 ${T().repeat}</button><div class="lesson">${T().translation} <b>${w.meaning}</b></div>`;$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=T().nextWord}
+function showListening(){let w=words()[index];$('counter').textContent=T().practice+' '+(index+1)+' / '+words().length;$('playContent').innerHTML=`<p>${T().listenHint}</p><button class="btn secondary" data-action="speak">🔊 ${T().repeat}</button><div class="lesson">${T().translation} <b>${w.meaning}</b></div>`;$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=T().nextWord}
 function speakCurrent(){let w=words()[index];if(!('speechSynthesis'in window)){alert(T().speakError);return}let u=new SpeechSynthesisUtterance(w.word);u.lang=speech[data.courseLang]||'en-US';speechSynthesis.cancel();speechSynthesis.speak(u)}
 function startQuiz(type){recalcHearts();if(data.lives<=0){alert(T().out+' '+fmt(data.heartQueue[0]-Date.now()));return}mode=type==='grammar'?'grammarQuiz':'quiz';index=0;quizSet=type==='grammar'?[...(grammarQuestions[data.courseLang]||grammarQuestions.en)].sort(()=>Math.random()-.5):[...words()].sort(()=>Math.random()-.5).slice(0,10);openPlay(type==='grammar'?'✍️ '+T().grammarQuiz:'🧠 '+T().quiz);showQuestion()}
-function showQuestion(){$('counter').textContent=T().question+' '+(index+1)+' / '+quizSet.length;let q=quizSet[index],prompt,opts,correct;if(mode==='grammarQuiz'){prompt=q[0];opts=q[1];correct=opts[q[2]]}else{prompt=`«${q.word}» ${T().meaning}`;correct=q.meaning;opts=[correct];while(opts.length<4){let v=words()[Math.floor(Math.random()*words().length)].meaning;if(!opts.includes(v))opts.push(v)}opts.sort(()=>Math.random()-.5)}$('playContent').innerHTML=`<div class="question">${prompt}</div><div class="answers">${opts.map(o=>`<button class="answer" onclick="answer(this,${JSON.stringify(o)},${JSON.stringify(correct)})">${o}</button>`).join('')}</div>`;$('feedback').textContent='';$('nextBtn').classList.add('hidden')}
+function showQuestion(){$('counter').textContent=T().question+' '+(index+1)+' / '+quizSet.length;let q=quizSet[index],prompt,opts,correct;if(mode==='grammarQuiz'){prompt=q[0];opts=q[1];correct=opts[q[2]]}else{prompt=`«${q.word}» ${T().meaning}`;correct=q.meaning;opts=[correct];while(opts.length<4){let v=words()[Math.floor(Math.random()*words().length)].meaning;if(!opts.includes(v))opts.push(v)}opts.sort(()=>Math.random()-.5)}window.currentQuizOptions=opts;window.currentQuizCorrect=correct;$('playContent').innerHTML=`<div class="question">${prompt}</div><div class="answers">${opts.map((o,i)=>`<button class="answer" type="button" data-answer-index="${i}">${o}</button>`).join('')}</div>`;$('feedback').textContent='';$('nextBtn').classList.add('hidden')}
 function answer(el,v,correct){document.querySelectorAll('.answer').forEach(b=>b.disabled=true);if(v===correct){el.classList.add('good');$('feedback').textContent=T().correct;data.xp+=10}else{el.classList.add('bad');$('feedback').textContent=T().wrong+' '+correct+' · '+T().lost;loseHeart();document.querySelectorAll('.answer').forEach(b=>{if(b.textContent===correct)b.classList.add('good')})}save();$('nextBtn').classList.remove('hidden');$('nextBtn').textContent=index===quizSet.length-1?T().finish:T().nextQuestion}
 function nextItem(){if(mode==='vocab'||mode==='listen'){if(index<words().length-1){index++;mode==='vocab'?showVocab():showListening()}else{$('playContent').innerHTML='<h2>'+T().done+'</h2>';$('feedback').textContent='';$('nextBtn').classList.add('hidden')}return}if(mode==='grammarLesson'){let list=grammarData[data.courseLang]||grammarData.en;if(grammarIndex<list.length-1){grammarIndex++;showGrammar()}else{$('playContent').innerHTML='<h2>'+T().allRules+'</h2>';$('nextBtn').classList.add('hidden')}return}index++;if(index>=quizSet.length){$('playContent').innerHTML='<h2>'+T().testDone+'</h2><p>'+T().choose+'</p>';$('feedback').textContent='';$('nextBtn').classList.add('hidden');return}showQuestion()}
 function showLeague(){hideAll();$('league').classList.remove('hidden');let rows=[['Алишер',380],['Мадина',320],['Фарид',250],['Ту',data.xp],['Ситора',90]].sort((a,b)=>b[1]-a[1]);$('ranking').innerHTML=rows.map((r,i)=>`<div class="rank"><b>${['🥇','🥈','🥉','4️⃣','5️⃣'][i]} ${r[0]}</b><span class="tag">${r[1]} XP</span></div>`).join('')}
+// Explicit event delegation keeps every activity button responsive on GitHub Pages.
+document.addEventListener('click',(event)=>{
+ const answerButton=event.target.closest('[data-answer-index]');
+ if(answerButton && !answerButton.disabled){
+  const answerIndex=Number(answerButton.dataset.answerIndex);
+  const options=window.currentQuizOptions||[];
+  if(Number.isInteger(answerIndex) && answerIndex>=0 && answerIndex<options.length){
+   answer(answerButton,options[answerIndex],window.currentQuizCorrect);
+  }
+  return;
+ }
+ const button=event.target.closest('[data-action]');
+ if(!button)return;
+ switch(button.dataset.action){
+  case 'vocab': startVocab(); break;
+  case 'vocab-quiz': startQuiz('vocab'); break;
+  case 'grammar': startGrammar(); break;
+  case 'grammar-quiz': startQuiz('grammar'); break;
+  case 'listen': startListening(); break;
+  case 'league': showLeague(); break;
+  case 'home': goHome(); break;
+  case 'next': nextItem(); break;
+  case 'speak': speakCurrent(); break;
+ }
+});
+// Expose functions for compatibility with older saved page versions.
+Object.assign(window,{startVocab,startQuiz,startGrammar,startListening,showLeague,goHome,nextItem,speakCurrent});
 $('uiLang').value=data.uiLang;$('courseLang').value=data.courseLang;applyLanguage();setInterval(()=>{renderStats();},1000);
 </script></body></html>
